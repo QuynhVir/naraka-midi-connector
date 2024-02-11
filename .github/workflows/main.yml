@@ -20,10 +20,7 @@ jobs:
     - name: Generate release tag
       id: create-tag
       run: |
-        echo "RELEASE_TAG=GitHub-Actions-Build_$(date +"%Y.%m.%d_%H-%M")" >> "$GITHUB_ENV"
-    - name: Show RELEASE_TAG
-      run: |
-        echo "State is: '${{ env.RELEASE_TAG }}'"
+        echo "RELEASE_TAG=GitHub-Actions-Build_$(Get-Date -Format "yyyy.MM.dd_HH-mm")" >> "$GITHUB_ENV"
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "dist/Naraka MIDI Connector.exe"
