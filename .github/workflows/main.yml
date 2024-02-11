@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-    - main
+      - main
 
 permissions:
   contents: write
@@ -11,20 +11,12 @@ jobs:
     name: Build executable using PyInstaller
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
-    - run: pip install -r requirements.txt
-    - run: pyinstaller 'Naraka MIDI Connector.spec'
-    - name: Generate release tag
-      id: create-tag
-      run: |
-        echo "RELEASE_TAG=GitHub-Actions-Build_$(Get-Date -Format 'yyyy.MM.dd_HH-mm')" >> "$GITHUB_ENV"
-    - name: Step 2
-      run: |
-        echo "State is: '${{ env.RELEASE_TAG }}'"
-    - uses: ncipollo/release-action@v1
-      with:
-        artifacts: "dist/Naraka MIDI Connector.exe"
-        tag: ${{ env.RELEASE_TAG }}
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: pyinstaller 'Naraka MIDI Connector.spec'
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "dist/Naraka MIDI Connector.exe"
