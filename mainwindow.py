@@ -155,8 +155,8 @@ class MainWindow(QMainWindow):
         # Calculate the keystroke
         key = self.calculate_keystroke(msg)
 
-        # If key is None, return
-        if key is None:
+        # If key is None or '?' (invalid note), return
+        if key is None or key == '?':
             return
         
         # If msg is note_on with velocity 0 or note_off, send the key release
