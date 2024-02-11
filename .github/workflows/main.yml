@@ -20,8 +20,8 @@ jobs:
     - name: Generate release tag
       id: tag
       run: |
-        echo "release_tag=GitHub-Actions-Build_$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_OUTPUT
+        echo "release_tag=GitHub-Actions-Build_$(date +"%Y.%m.%d_%H-%M")" >> "$GITHUB_OUTPUT"
     - uses: softprops/action-gh-release@v1
       with:
-        tag_name: $release_tag
+        tag_name: ${{ steps.tag.outputs.release_tag }}
         files: dist/Naraka MIDI Connector.exe
