@@ -1,4 +1,5 @@
 # This Python file uses the following encoding: utf-8
+import os
 import sys
 import mido
 import time
@@ -6,6 +7,9 @@ import keyboard
 import threading
 
 from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtGui import QIcon
+
+import mido.backends.rtmidi
 
 # Important:
 # You need to run the following command to generate the ui_form.py file
@@ -23,6 +27,7 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
+        self.setWindowIcon(QIcon(self.resource_path('resources/midi.ico')))
         self.ui.setupUi(self)
         self.populate_midi_devices()
         self.populate_base_octave()
@@ -35,6 +40,11 @@ class MainWindow(QMainWindow):
 
         # Initialize the port to None
         self.port = None
+
+    def resource_path(self, relative_path):
+        """Get absolute path to resource, works for development and PyInstaller."""
+        base_path = getattr(sys, '_MEIPASS', os.path.abspath("."))
+        return os.path.join(base_path, relative_path)
 
     def closeEvent(self, event):
         # If the port is not None, stop listening
