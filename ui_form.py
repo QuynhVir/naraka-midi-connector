@@ -82,14 +82,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayoutWidget_4 = QWidget(self.centralwidget)
         self.horizontalLayoutWidget_4.setObjectName(u"horizontalLayoutWidget_4")
-        self.horizontalLayoutWidget_4.setGeometry(QRect(109, 0, 131, 51))
+        self.horizontalLayoutWidget_4.setGeometry(QRect(109, 0, 61, 51))
         self.horizontalLayout_4 = QHBoxLayout(self.horizontalLayoutWidget_4)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.mapping_range = QComboBox(self.horizontalLayoutWidget_4)
-        self.mapping_range.setObjectName(u"mapping_range")
+        self.base_octave = QComboBox(self.horizontalLayoutWidget_4)
+        self.base_octave.setObjectName(u"base_octave")
 
-        self.horizontalLayout_4.addWidget(self.mapping_range)
+        self.horizontalLayout_4.addWidget(self.base_octave)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -100,10 +100,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Naraka MIDI Connector", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"MIDI devices:", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"MIDI Devices:", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Options:", None))
         self.guzheng_master_mode.setText(QCoreApplication.translate("MainWindow", u"Guzheng Master Mode", None))
         self.startButton.setText(QCoreApplication.translate("MainWindow", u"Start", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Start from:", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Base Octave:", None))
     # retranslateUi
 
