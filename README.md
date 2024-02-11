@@ -1,5 +1,7 @@
 # naraka-midi-connector
 
+![Naraka MIDI Connector](resources/app.png)
+
 This tool converts MIDI signals from a digital piano into keyboard keystrokes, allowing you to play instruments in the game NARAKA: BLADEPOINT.
 
 ## Installation
