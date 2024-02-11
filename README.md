@@ -5,24 +5,22 @@ This tool converts MIDI signals from a digital piano into keyboard keystrokes, a
 ## Installation
 
 1. Clone the repository:
-    ```
-    git clone https://github.com/QuynhVir/naraka-midi-connector.git
-    ```
+
+   `git clone https://github.com/QuynhVir/naraka-midi-connector.git`
+
 2. Navigate to the project directory:
-    ```
-    cd naraka-midi-connector
-    ```
+
+   `cd naraka-midi-connector`
+
 3. Install the required dependencies:
-    ```
-    pip install -r requirements.txt
-    ```
+
+   `pip install -r requirements.txt`
 
 ## Building the Executable
 
 Run the following command to build the executable:
-```
-pyinstaller 'Naraka MIDI Connector.spec'
-```
+
+`pyinstaller 'Naraka MIDI Connector.spec'`
 
 The resulting executable will be located in the `dist` directory and named `Naraka MIDI Connector.exe`.
 
