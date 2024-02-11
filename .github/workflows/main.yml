@@ -21,7 +21,7 @@ jobs:
       id: create-tag
       run: |
         echo "RELEASE_TAG=GitHub-Actions-Build_$(date +"%Y.%m.%d_%H-%M")" >> "$GITHUB_OUTPUT"
-    - uses: softprops/action-gh-release@v1
+    - uses: ncipollo/release-action@v1
       with:
-        tag_name: ${{ steps.create-tag.outputs.RELEASE_TAG }}
-        files: dist/Naraka MIDI Connector.exe
+        artifacts: "dist/Naraka MIDI Connector.exe"
+        tag: ${{ steps.create-tag.outputs.RELEASE_TAG }}
