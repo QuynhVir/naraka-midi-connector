@@ -14,7 +14,11 @@ jobs:
         python-version: '3.12'
     - run: pip install -r requirements.txt
     - run: pyinstaller 'Naraka MIDI Connector.spec'
+    - name: Generate release tag
+      id: tag
+      run: |
+        echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
     - uses: softprops/action-gh-release@v1
       with:
-         files: dist/Naraka MIDI Connector.exe
-    
+        tag_name: ${{ steps.tag.outputs.release_tag }}
+        files: dist/Naraka MIDI Connector.exe
