@@ -53,7 +53,7 @@ class MainWindow(QMainWindow):
 
     def populate_midi_devices(self):
         # Get the list of MIDI devices
-        midi_devices = mido.get_output_names()
+        midi_devices = mido.get_input_names()
 
         # Clear the QComboBox
         self.ui.midi_device_list.clear()
