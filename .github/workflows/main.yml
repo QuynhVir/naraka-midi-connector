@@ -17,7 +17,11 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: pyinstaller 'Naraka MIDI Connector.spec'
+      - name: Generate release tag
+        id: create-tag
+        run: |
+          echo "RELEASE_TAG=GitHub-Actions-Build_$("${{ github.sha }}".SubString(0, 8))_$(Get-Date -Format 'yyyy.MM.dd_HH-mm')" >> $env:GITHUB_ENV
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/Naraka MIDI Connector.exe"
-          tag: "GitHub-Actions-Releases-${{ github.sha }}"
+          tag: ${{ env.RELEASE_TAG }}
