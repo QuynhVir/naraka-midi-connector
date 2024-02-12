@@ -2,7 +2,7 @@
 
 ![Naraka MIDI Connector](resources/app.png)
 
-This tool converts MIDI signals from a digital piano into keyboard keystrokes, allowing you to play instruments in the game NARAKA: BLADEPOINT.
+This tool converts MIDI signals from a digital piano into keyboard keystrokes, allowing you to play instruments in the game NARAKA: BLADEPOINT. And yes, it also works with Genshin Impact's lyre.
 
 ## Installation
 
