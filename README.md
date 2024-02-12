@@ -18,6 +18,10 @@ This tool converts MIDI signals from a digital piano into keyboard keystrokes, a
 
    `pip install -r requirements.txt`
 
+4. Run the tool:
+
+   `python mainwindow.py`
+
 ## Building the Executable
 
 Run the following command to build the executable:
@@ -28,9 +32,11 @@ The resulting executable will be located in the `dist` directory and named `Nara
 
 ## Usage
 
+Make sure your MIDI device is connected to your computer before running the tool.
+
 1. Run the `Naraka MIDI Connector.exe` executable.
 2. Select your MIDI device from the dropdown menu.
-3. Select the base octave for your instrument.
+3. Select the base octave for your instrument. The default is C3.
 4. Click the "Start" button to start listening for MIDI signals.
 5. Play your MIDI instrument. The tool will convert the MIDI signals into keyboard keystrokes for the game.
 
